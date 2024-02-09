@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta de San Valentín</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+        }
+        #video-fondo {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: -1;
+        }
+        h1 {
+            color: #FF1493; /* Color rosa */
+            z-index: 1;
+        }
+        button {
+            background-color: #FF1493;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        #respuesta-imagen {
+            display: none; /* La imagen se oculta inicialmente */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <video id="video-fondo" autoplay loop muted>
+        <source src="tu-video.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+
+    <h1>¿Quieres ser mi San Valentín?</h1>
+    <a href="tu-enlace-para-opcion-si" target="_blank"><button onclick="mostrarImagen('imagen-si.jpg')">Sí</button></a>
+    <a href="tu-enlace-para-opcion-obviamente" target="_blank"><button onclick="mostrarImagen('imagen-obviamente.jpg')">Obviamente</button></a>
+
+    <div id="respuesta-imagen">
+        <img id="imagen-seleccionada" src="" alt="Imagen de respuesta">
+    </div>
+
+    <script>
+        function mostrarImagen(nombreImagen) {
+            // Muestra la imagen correspondiente al hacer clic en un botón
+            document.getElementById('respuesta-imagen').style.display = 'block';
+            document.getElementById('imagen-seleccionada').src = nombreImagen;
+        }
+    </script>
+</body>
+</html>
